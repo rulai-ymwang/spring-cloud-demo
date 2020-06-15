@@ -1,0 +1,35 @@
+version: '2'
+
+services:
+  scd-eureka:
+    image: scd-eureka
+#    container_name: scd-eureka
+    ports:
+      - "6001:6001"
+  scd-zuul:
+    image: scd-zuul
+#    container_name: scd-zuul
+    links:
+      - scd-eureka
+    ports:
+      - "6002:6002"
+    depends_on:
+      - scd-eureka
+  scd-foo-service:
+    image: scd-foo-service
+#    container_name: scd-foo-service
+    links:
+      - scd-eureka
+    ports:
+      - "6101"
+    depends_on:
+      - scd-eureka
+  scd-bar-service:
+    image: scd-bar-service
+#    container_name: scd-bar-service
+    links:
+      - scd-eureka
+    ports:
+      - "6102"
+    depends_on:
+      - scd-eureka
