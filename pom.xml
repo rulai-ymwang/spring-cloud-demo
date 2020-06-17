@@ -8,10 +8,9 @@
     <artifactId>scd</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>infrastructure-eureka</module>
-        <module>infrastructure-zuul</module>
-        <module>foo-service</module>
-        <module>bar-service</module>
+        <module>scd-infrastructure</module>
+        <module>scd-subsys-foobar</module>
+        <module>scd-commons</module>
     </modules>
     <packaging>pom</packaging>
 

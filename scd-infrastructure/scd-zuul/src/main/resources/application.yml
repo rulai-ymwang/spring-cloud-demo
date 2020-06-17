@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: scd-zuul
+
+server:
+  port: 6002
+
+eureka:
+  client:
+    service-url:
+      'defaultZone': http://scd-eureka:6001/eureka/
+    registerWithEureka: false
+
+zuul:
+  ignored-services: "*"
+  routes:
+    foo:
+      serviceId: scd-foo-service
+      path: /foo/**
+    bar:
+      serviceId: scd-bar-service
+      path: /bar/**

@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: scd-foo-service
+
+server:
+  port: 6101
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://scd-eureka:6001/eureka/
+  instance:
+    prefer-ip-address: true
